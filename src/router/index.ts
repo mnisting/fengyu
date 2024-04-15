@@ -1,34 +1,36 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes: [
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/login',
+      component: () => import('@/views/login/login.vue')
+    },
 
+    {
+      path: '/',
+      name: 'layout',
+      component: () => import('@/layout/index.vue'),
+      children: [
         {
-            path: '/login',
-            component: () => import('@/views/login/login.vue')
-        },
-
-        {
-            path: '/',
-            name: 'layout',
-            component: () => import('@/layout/index.vue'),
-            children: [
-
-                // {
-                //   path: 'role',
-                //   component: () => import('@/views/role/index.vue'),
-                //   meta: { name1: '角色管理', name2: '角色列表' }
-                // },
-
-            ]
+          path: 'publishingLssues',
+          component: () => import('@/views/publishingLssues/publishingLssues.vue'),
+          meta: { name: '发布问题' }
         },
         {
-            path: '/:pathMatch(.*)',
-            component: () => import('@/views/404.vue')
+          path: 'problemList',
+          component: () => import('@/views/problemList/problemList.vue'),
+          meta: { name: '问题列表' }
         }
-    ]
-})
+      ]
+    },
+    {
+      path: '/:pathMatch(.*)',
+      component: () => import('@/views/404.vue')
+    }
+  ]
+});
 
 // router.addRoute('layout', {
 //   path: 'order',
@@ -42,4 +44,4 @@ const router = createRouter({
 //   meta: { name1: '用户管理', name2: '用户创建' }
 // })
 
-export default router
+export default router;
