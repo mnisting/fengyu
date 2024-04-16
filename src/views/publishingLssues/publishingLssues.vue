@@ -13,7 +13,6 @@
       show-word-limit
     />
   </van-cell-group>
-
   <h4>图片上传</h4>
   <div>
     <span>最多添加9张照片</span>
@@ -59,7 +58,11 @@ const anchors = [100, Math.round(0.4 * window.innerHeight), Math.round(0.7 * win
 const height = ref(anchors[0]);
 const tagpanelList = ref([]);
 const pushtagpanel = (i) => {
-  tagpanelList.value.push(i);
+  if (tagpanelList.value.find((_) => _ == i)) {
+    tagpanelList.value = tagpanelList.value.filter((_) => _ != i);
+  } else {
+    tagpanelList.value.push(i);
+  }
 };
 const outtagpanel = (i) => {
   tagpanelList.value = tagpanelList.value.filter((_) => _ != i);
