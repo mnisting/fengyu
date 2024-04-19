@@ -16,11 +16,6 @@ const router = createRouter({
       path: '/personalCenter',
       component: () => import('@/views/personalCenter/index.vue')
     },
-    // 用户信息详情页面
-    {
-      path: '/userDetail',
-      component: () => import('@/views/userDetail/index.vue')
-    },
 
     {
       path: '/',

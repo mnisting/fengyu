@@ -2,21 +2,12 @@
 import { ref } from 'vue';
 
 const imgUrl = ref('https://img2.woyaogexing.com/2021/06/04/bc180642bdd0489f865c03efd6ebc324!400x400.jpeg');
-
-// 打开消息页面
-const openMessage = () => {
-  console.log('打开消息页面');
-};
 </script>
 <template>
   <div class="personalCenter">
     <div class="userBox">
-      <!-- 顶部消息按钮 -->
-      <div class="message">
-        <van-icon name="chat-o" color="#fff" @click="openMessage" />
-      </div>
       <!-- 用户头像和用户名 -->
-      <van-cell class="user" is-link to="userDetail">
+      <van-cell class="user">
         <template #title>
           <img :src="imgUrl" alt="" />
           <div>好好先生</div>
@@ -69,7 +60,7 @@ const openMessage = () => {
   .serviceBox {
     flex: 1;
     background-color: #f5f5f5;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     .van-cell-group {
       margin: 10px;
     }
