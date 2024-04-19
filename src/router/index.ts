@@ -32,6 +32,16 @@ const router = createRouter({
         //   component: () => import('@/views/role/index.vue'),
         //   meta: { name1: '角色管理', name2: '角色列表' }
         // },
+        {
+          path: 'question/create',
+          component: () => import('@/views/publishingLssues/publishingLssues.vue'),
+          meta: { name: '发布问题' }
+        },
+        {
+          path: 'question',
+          component: () => import('@/views/problemList/problemList.vue'),
+          meta: { name: '问题列表' }
+        }
       ]
     },
     {
