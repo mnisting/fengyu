@@ -1,38 +1,45 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes: [
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/login',
+      component: () => import('@/views/login/index.vue')
+    },
+    {
+      path: '/loginTo',
+      component: () => import('@/views/login/login.vue')
+    },
+    // 个人中心
+    {
+      path: '/personalCenter',
+      component: () => import('@/views/personalCenter/index.vue')
+    },
+    // 用户信息详情页面
+    {
+      path: '/userDetail',
+      component: () => import('@/views/userDetail/index.vue')
+    },
 
-        {
-            path: '/login',
-            component: () => import('@/views/login/index.vue')
-        },
-        {
-            path: '/loginTo',
-            component: () => import('@/views/login/login.vue')
-        },
-
-        {
-            path: '/',
-            name: 'layout',
-            component: () => import('@/layout/index.vue'),
-            children: [
-
-                // {
-                //   path: 'role',
-                //   component: () => import('@/views/role/index.vue'),
-                //   meta: { name1: '角色管理', name2: '角色列表' }
-                // },
-
-            ]
-        },
-        {
-            path: '/:pathMatch(.*)',
-            component: () => import('@/views/404.vue')
-        }
-    ]
-})
+    {
+      path: '/',
+      name: 'layout',
+      component: () => import('@/layout/index.vue'),
+      children: [
+        // {
+        //   path: 'role',
+        //   component: () => import('@/views/role/index.vue'),
+        //   meta: { name1: '角色管理', name2: '角色列表' }
+        // },
+      ]
+    },
+    {
+      path: '/:pathMatch(.*)',
+      component: () => import('@/views/404.vue')
+    }
+  ]
+});
 
 // router.addRoute('layout', {
 //   path: 'order',
@@ -46,4 +53,4 @@ const router = createRouter({
 //   meta: { name1: '用户管理', name2: '用户创建' }
 // })
 
-export default router
+export default router;

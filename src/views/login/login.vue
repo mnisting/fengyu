@@ -6,10 +6,10 @@ const route = useRoute();
 const router = useRouter();
 
 // 登录相关参数
-const account = ref('');
-const psd = ref('');
-const tel = ref('');
-const sms = ref('');
+const account = ref<String>('');
+const psd = ref<String>('');
+const tel = ref<String>('');
+const sms = ref<String>('');
 
 // 获取验证码
 const getCode = () => {
@@ -17,7 +17,7 @@ const getCode = () => {
 };
 
 // 隐私协议勾选框
-const checked = ref(false);
+const checked = ref<Boolean>(false);
 // 打开用户协议
 const openUserAgreement = () => {
   console.log('打开用户协议');
@@ -39,7 +39,7 @@ const handleSubmit = () => {
     });
 };
 // 隐私协议未勾选时提示弹窗
-const dlgShow = ref(false);
+const dlgShow = ref<Boolean>(false);
 const handleLogin = () => {
   // console.log('login');
   if (!checked.value) {
@@ -90,7 +90,6 @@ const switchLoginType = () => {
         </van-field>
       </van-cell-group>
       <!-- 隐私协议 -->
-      {{ checked }}
       <div class="checkbox">
         <van-checkbox v-model="checked" />
         <div class="tips">

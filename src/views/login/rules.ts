@@ -48,10 +48,3 @@ export const smsRules = [
     trigger: 'onBlur'
   }
 ];
-
-// export default {
-//   accountRules,
-//   psdRules,
-//   telRules,
-//   smsRules
-// };
