@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { accountRules, psdRules, telRules, smsRules } from './rules';
+import { accountRules, psdRules, telRules, smsRules } from './components/rules';
 const route = useRoute();
 const router = useRouter();
 
@@ -57,10 +57,7 @@ const confirm = () => {
 // 切换登录方式
 const switchLoginType = () => {
   router.push({
-    path: '/loginTo',
-    query: {
-      type: route.query.type === 'psd' ? 'sms' : 'psd'
-    }
+    path: '/login/account'
   });
 };
 </script>

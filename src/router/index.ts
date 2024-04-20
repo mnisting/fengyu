@@ -3,13 +3,25 @@ import { createRouter, createWebHistory } from 'vue-router';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // 登录方式选择页
     {
       path: '/login',
       component: () => import('@/views/login/index.vue')
     },
+    // 账号密码登录
     {
-      path: '/loginTo',
-      component: () => import('@/views/login/login.vue')
+      path: '/login/account',
+      component: () => import('@/views/login/account.vue')
+    },
+    // 手机验证码登录
+    {
+      path: '/login/sms',
+      component: () => import('@/views/login/sms.vue')
+    },
+    // 注册
+    {
+      path: '/login/registry',
+      component: () => import('@/views/login/registry.vue')
     },
     // 个人中心
     {
