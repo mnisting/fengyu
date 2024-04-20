@@ -22,6 +22,7 @@ const onLogin = () => {
     })
     .catch(() => {
       console.log('fail');
+      1;
     });
 };
 

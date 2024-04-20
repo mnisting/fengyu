@@ -17,7 +17,7 @@ const props = defineProps({
   }
 });
 
-// 隐私协议勾选框
+// 隐私协议勾选框1
 const checked = ref<Boolean>(false);
 // 打开用户协议
 const openUserAgreement = () => {
